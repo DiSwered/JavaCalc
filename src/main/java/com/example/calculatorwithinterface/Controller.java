@@ -35,4 +35,9 @@ public class Controller {
         stage.setScene(scene);
         stage.show();
     }
+
+//    public String addToInput(String inputField) {
+//        switch ()
+//        return inputField;
+//    }
 }
