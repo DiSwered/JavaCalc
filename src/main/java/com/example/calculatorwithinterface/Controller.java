@@ -41,6 +41,13 @@ public class Controller {
     public void addToInput(ActionEvent event) {
         String inputField = textField.getText();
         String buttonId = ((Node)event.getSource()).getId();
+
+        if (buttonId.equals("buttonPlus") || buttonId.equals("buttonMinus") || buttonId.equals("buttonDiv") || buttonId.equals("buttonMult")) {
+            String resStr = Integer.toString(main.Calculation(textField.getText()));
+            System.out.println(resStr);
+            inputField = resStr;
+//            textField.setText(resStr);
+        }
         switch (buttonId) {
             case "buttonOne" -> textField.setText(inputField + "1");
             case "buttonTwo" -> textField.setText(inputField + "2");
@@ -57,10 +64,6 @@ public class Controller {
             case "buttonMult" -> textField.setText(inputField + "*");
             case "buttonDiv" -> textField.setText(inputField + "/");
             case "buttonDEL" -> textField.setText(inputField.substring(0, inputField.length() - 1));
-        }
-        if (buttonId.equals("buttonPlus") || buttonId.equals("buttonMinus") || buttonId.equals("buttonDiv") || buttonId.equals("buttonMult")) {
-            String resStr = Integer.toString(main.Calculation(inputField));
-            textField.setText(resStr);
         }
     }
 }
