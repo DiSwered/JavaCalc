@@ -22,11 +22,13 @@ public class Controller {
 
     public void Solve(ActionEvent event) throws IOException {
         String inputField = textField.getText();
+        Main main = new Main();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ResultScene.fxml"));
         root = loader.load();
 
         ResultController resultController = loader.getController();
+        resultController.DisplayResult(inputField ,main.Calculation(inputField));
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
