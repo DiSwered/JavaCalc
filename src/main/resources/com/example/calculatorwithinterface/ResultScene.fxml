@@ -13,7 +13,7 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <Button fx:id="continueButton" layoutX="234.0" layoutY="306.0" mnemonicParsing="false" text="CONTINUE">
+      <Button fx:id="continueButton" layoutX="234.0" layoutY="306.0" mnemonicParsing="false" onAction="#Continue" text="CONTINUE">
          <font>
             <Font size="20.0" />
          </font>
