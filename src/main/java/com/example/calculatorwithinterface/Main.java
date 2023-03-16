@@ -35,20 +35,24 @@ public class Main extends Application {
 
     public int Calculation(String str) {
         String[] s = str.split("[+\\-/*]");
-        String[] symb = Arrays.stream(str.split("\\d")).filter(x -> !x.isEmpty()).toArray(String[]::new);
-        int[] newStr = new int[] {Integer.parseInt(s[0]), Integer.parseInt(s[1])};
-        int res = newStr[0];
-        for (int i = 1; i < s.length; i++) {
-            newStr[0] = res;
-            newStr[1] = Integer.parseInt(s[i]);
-            switch (symb[i - 1]) {
-                case "+" -> res = newStr[0] + newStr[1];
-                case "-" -> res = newStr[0] - newStr[1];
-                case "/" -> res = newStr[0] / newStr[1];
-                case "*" -> res = newStr[0] * newStr[1];
+        if (s.length < 2) {
+            return Integer.parseInt(s[0]);
+        } else {
+            String[] symb = Arrays.stream(str.split("\\d")).filter(x -> !x.isEmpty()).toArray(String[]::new);
+            int[] newStr = new int[]{Integer.parseInt(s[0]), Integer.parseInt(s[1])};
+            int res = newStr[0];
+            for (int i = 1; i < s.length; i++) {
+                newStr[0] = res;
+                newStr[1] = Integer.parseInt(s[i]);
+                switch (symb[i - 1]) {
+                    case "+" -> res = newStr[0] + newStr[1];
+                    case "-" -> res = newStr[0] - newStr[1];
+                    case "/" -> res = newStr[0] / newStr[1];
+                    case "*" -> res = newStr[0] * newStr[1];
+                }
             }
+            return res;
         }
-        return res;
     }
 
     @Override

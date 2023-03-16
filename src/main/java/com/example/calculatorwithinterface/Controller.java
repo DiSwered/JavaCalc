@@ -20,10 +20,11 @@ public class Controller {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private Main main = new Main();
 
     public void solve(ActionEvent event) throws IOException {
         String inputField = textField.getText();
-        Main main = new Main();
+
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ResultScene.fxml"));
         root = loader.load();
@@ -39,7 +40,8 @@ public class Controller {
 
     public void addToInput(ActionEvent event) {
         String inputField = textField.getText();
-        switch (((Node)event.getSource()).getId()) {
+        String buttonId = ((Node)event.getSource()).getId();
+        switch (buttonId) {
             case "buttonOne" -> textField.setText(inputField + "1");
             case "buttonTwo" -> textField.setText(inputField + "2");
             case "buttonThree" -> textField.setText(inputField + "3");
@@ -55,6 +57,10 @@ public class Controller {
             case "buttonMult" -> textField.setText(inputField + "*");
             case "buttonDiv" -> textField.setText(inputField + "/");
             case "buttonDEL" -> textField.setText(inputField.substring(0, inputField.length() - 1));
+        }
+        if (buttonId.equals("buttonPlus") || buttonId.equals("buttonMinus") || buttonId.equals("buttonDiv") || buttonId.equals("buttonMult")) {
+            String resStr = Integer.toString(main.Calculation(inputField));
+            textField.setText(resStr);
         }
     }
 }
