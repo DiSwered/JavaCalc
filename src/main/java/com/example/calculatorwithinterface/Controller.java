@@ -30,7 +30,7 @@ public class Controller {
         root = loader.load();
 
         ResultController resultController = loader.getController();
-        resultController.DisplayResult(inputField ,main.Calculation(inputField));
+        resultController.DisplayResult(inputField, main.Calculation(inputField));
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -43,7 +43,7 @@ public class Controller {
         String buttonId = ((Node)event.getSource()).getId();
 
         if (buttonId.equals("buttonPlus") || buttonId.equals("buttonMinus") || buttonId.equals("buttonDiv") || buttonId.equals("buttonMult")) {
-            String resStr = Integer.toString(main.Calculation(textField.getText()));
+            String resStr = Float.toString(main.Calculation(textField.getText()));
             System.out.println(resStr);
             inputField = resStr;
 //            textField.setText(resStr);
@@ -64,6 +64,9 @@ public class Controller {
             case "buttonMult" -> textField.setText(inputField + "*");
             case "buttonDiv" -> textField.setText(inputField + "/");
             case "buttonDEL" -> textField.setText(inputField.substring(0, inputField.length() - 1));
+            case "buttonDot" -> textField.setText(inputField + ".");
+            case "buttonSolve" -> textField.setText(Float.toString(main.Calculation(textField.getText())));
+            case "buttonClr" -> textField.setText("");
         }
     }
 }

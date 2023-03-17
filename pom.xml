@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.calculatorwithinterface/com.example.calculatorwithinterface.HelloApplication
+                                com.example.calculatorwithinterface/com.example.calculatorwithinterface.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

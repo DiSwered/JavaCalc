@@ -19,7 +19,7 @@ public class ResultController {
     private Scene scene;
     private Parent root;
 
-    public void DisplayResult(String input, int result) {
+    public void DisplayResult(String input, float result) {
         resultLabel.setText(input + "=" + result);
     }
 

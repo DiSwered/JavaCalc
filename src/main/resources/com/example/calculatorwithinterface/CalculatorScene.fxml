@@ -1,29 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculatorwithinterface.Controller">
+<AnchorPane prefHeight="350.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculatorwithinterface.Controller">
    <children>
-      <TextField fx:id="textField" layoutX="149.0" layoutY="127.0" prefHeight="40.0" prefWidth="253.0" />
-      <Button fx:id="buttonSolve" layoutX="277.0" layoutY="351.0" mnemonicParsing="false" onAction="#solve" text="Solve" />
-      <Button fx:id="buttonOne" layoutX="150.0" layoutY="176.0" mnemonicParsing="false" onAction="#addToInput" text="1" />
-      <Button fx:id="buttonFour" layoutX="150.0" layoutY="215.0" mnemonicParsing="false" onAction="#addToInput" text="4" />
-      <Button fx:id="buttonZero" layoutX="150.0" layoutY="302.0" mnemonicParsing="false" onAction="#addToInput" text="0" />
-      <Button fx:id="buttonSeven" layoutX="150.0" layoutY="260.0" mnemonicParsing="false" onAction="#addToInput" text="7" />
-      <Button fx:id="buttonTwo" layoutX="226.0" layoutY="176.0" mnemonicParsing="false" onAction="#addToInput" text="2" />
-      <Button fx:id="buttonFive" layoutX="226.0" layoutY="215.0" mnemonicParsing="false" onAction="#addToInput" text="5" />
-      <Button fx:id="buttonLeftParenth" layoutX="226.0" layoutY="302.0" mnemonicParsing="false" onAction="#addToInput" text="(" />
-      <Button fx:id="buttonEight" layoutX="226.0" layoutY="260.0" mnemonicParsing="false" onAction="#addToInput" text="8" />
-      <Button fx:id="buttonThree" layoutX="300.0" layoutY="176.0" mnemonicParsing="false" onAction="#addToInput" text="3" />
-      <Button fx:id="buttonSix" layoutX="300.0" layoutY="215.0" mnemonicParsing="false" onAction="#addToInput" text="6" />
-      <Button fx:id="buttonRightParenth" layoutX="300.0" layoutY="302.0" mnemonicParsing="false" onAction="#addToInput" text=")" />
-      <Button fx:id="buttonNine" layoutX="300.0" layoutY="260.0" mnemonicParsing="false" onAction="#addToInput" text="9" />
-      <Button fx:id="buttonPlus" layoutX="375.0" layoutY="176.0" mnemonicParsing="false" onAction="#addToInput" text="+" />
-      <Button fx:id="buttonMinus" layoutX="375.0" layoutY="215.0" mnemonicParsing="false" onAction="#addToInput" text="-" />
-      <Button fx:id="buttonDiv" layoutX="375.0" layoutY="302.0" mnemonicParsing="false" onAction="#addToInput" text="/" />
-      <Button fx:id="buttonMult" layoutX="375.0" layoutY="260.0" mnemonicParsing="false" onAction="#addToInput" text="*" />
-      <Button fx:id="buttonDEL" layoutX="439.0" layoutY="136.0" mnemonicParsing="false" onAction="#addToInput" text="DEL" />
+      <TextField fx:id="textField" editable="false" layoutX="59.0" layoutY="50.0" prefHeight="48.0" prefWidth="258.0" promptText="0">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <Button fx:id="buttonSolve" layoutX="242.0" layoutY="271.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: Skyblue;" text="=">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonOne" layoutX="60.0" layoutY="111.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="1" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonFour" layoutX="60.0" layoutY="151.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="4">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonZero" layoutX="130.0" layoutY="231.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="30.0" prefWidth="118.0" text="0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonSeven" layoutX="60.0" layoutY="191.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="7">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonTwo" layoutX="130.0" layoutY="111.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="2">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonFive" layoutX="130.0" layoutY="151.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="5">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonEight" layoutX="130.0" layoutY="191.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="8">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonThree" layoutX="200.0" layoutY="111.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="3">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonSix" layoutX="200.0" layoutY="151.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="6">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonNine" layoutX="200.0" layoutY="191.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="9">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonPlus" layoutX="270.0" layoutY="111.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="+">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonMinus" layoutX="270.0" layoutY="151.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="-">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonDiv" layoutX="270.0" layoutY="231.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="/">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonMult" layoutX="270.0" layoutY="191.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text="*">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonDEL" layoutX="151.0" layoutY="271.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="30.0" prefWidth="74.0" text="DEL">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+      <Button fx:id="buttonDot" layoutX="60.0" layoutY="231.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="23.0" prefWidth="46.0" text=".">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Button>
+      <Button fx:id="buttonClr" layoutX="60.0" layoutY="271.0" mnemonicParsing="false" onAction="#addToInput" prefHeight="30.0" prefWidth="74.0" text="CLR" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Button>
    </children>
 </AnchorPane>
