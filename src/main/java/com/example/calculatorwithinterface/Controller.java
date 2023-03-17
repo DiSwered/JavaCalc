@@ -16,38 +16,21 @@ public class Controller {
     @FXML
     TextField textField;
 
-
     private Stage stage;
     private Scene scene;
     private Parent root;
     private Main main = new Main();
-
-    public void solve(ActionEvent event) throws IOException {
-        String inputField = textField.getText();
-
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ResultScene.fxml"));
-        root = loader.load();
-
-        ResultController resultController = loader.getController();
-        resultController.DisplayResult(inputField, main.Calculation(inputField));
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
     public void addToInput(ActionEvent event) {
         String inputField = textField.getText();
         String buttonId = ((Node)event.getSource()).getId();
 
         if (buttonId.equals("buttonPlus") || buttonId.equals("buttonMinus") || buttonId.equals("buttonDiv") || buttonId.equals("buttonMult")) {
-            String resStr = Float.toString(main.Calculation(textField.getText()));
+            String resStr = Double.toString(main.Calculation(textField.getText()));
             System.out.println(resStr);
             inputField = resStr;
-//            textField.setText(resStr);
         }
+
         switch (buttonId) {
             case "buttonOne" -> textField.setText(inputField + "1");
             case "buttonTwo" -> textField.setText(inputField + "2");
@@ -65,7 +48,7 @@ public class Controller {
             case "buttonDiv" -> textField.setText(inputField + "/");
             case "buttonDEL" -> textField.setText(inputField.substring(0, inputField.length() - 1));
             case "buttonDot" -> textField.setText(inputField + ".");
-            case "buttonSolve" -> textField.setText(Float.toString(main.Calculation(textField.getText())));
+            case "buttonSolve" -> textField.setText(Double.toString(main.Calculation(textField.getText())));
             case "buttonClr" -> textField.setText("");
         }
     }
